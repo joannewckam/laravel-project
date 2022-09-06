@@ -26,12 +26,23 @@ use App\Http\Controllers\ListingController;
 //All listings
 Route::get('/', [ListingController::class, 'index']);
 
-//Single listing
-Route::get('/listings/{listing}', [ListingController::class, 'show']);
-
 //Show Create form
 Route::get('/listings/create', [ListingController::class, 'create']);
 
+//Store listing Data
+Route::post('/listings', [ListingController::class, 'store']);
+
+//Show edit Form
+Route::get('/listings/{listing}/edit', [ListingController::class, 'edit']);
+
+//Update Listing
+Route::put('/listings/{listing}', [ListingController::class, 'update']);
+
+//Delete Listing
+Route::delete('/listings/{listing}', [ListingController::class, 'delete']);
+
+//Single listing
+Route::get('/listings/{listing}', [ListingController::class, 'show']);
 
 // example:
 // Route::get('/hello', function(){
